@@ -25,4 +25,10 @@ bin
 *.o
 *.o.d
 cocos2d/
+.classpath
+.project
+.launch
+.buildpath
+proj.android
+proj.ios_mac
 
