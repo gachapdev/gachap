@@ -1,2 +1,4 @@
-# gachap
-create gachap
+gachap
+===
+
+強化型ガチャアプリ
