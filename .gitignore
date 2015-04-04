@@ -34,3 +34,6 @@ proj.ios_mac
 proj.linux
 proj.win32
 proj.wp8-xaml
+
+proj.android/project.properties
+proj.android/assets/
