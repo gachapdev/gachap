@@ -29,6 +29,5 @@ cocos2d/
 .project
 .launch
 .buildpath
-proj.android
 proj.ios_mac
 
