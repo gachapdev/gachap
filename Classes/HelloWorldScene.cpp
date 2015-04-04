@@ -39,10 +39,25 @@ bool HelloWorld::init() {
 	this->schedule(schedule_selector(HelloWorld::gameLogic), 1.0f);
 
 	CCSize winSize = CCDirector::sharedDirector()->getWinSize();
+
+	CCParticleSystemQuad* particle1 = CCParticleSystemQuad::create(
+				"particle_ver3.plist");
+		CCParticleSystemQuad* particle2 = CCParticleSystemQuad::create(
+				"particle_ver4.plist");
+		particle2->resetSystem();
+		particle1->setPosition(winSize.width / 2, winSize.height / 2);
+		particle2->setPosition(winSize.width / 2, winSize.height / 2);
+		this->addChild(particle1);
+		this->addChild(particle2);
+
+
+
 	CCSprite *pImg = CCSprite::create("collecter.png");
 	pImg->setTag(1);
 	pImg->setPosition(winSize.width / 2, winSize.height / 2);
 	this->addChild(pImg);
+
+
 
 	Size visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
@@ -162,24 +177,23 @@ bool HelloWorld::onTouchBegan(cocos2d::Touch* touches,
 //	player->runAction(actionMove);
 
 	CCSize winSize = CCDirector::sharedDirector()->getWinSize();
+	CCSprite *pImg = CCSprite::create("collecter.png");
+	pImg->setTag(1);
+	pImg->setPosition(winSize.width / 2, winSize.height / 2);
+	this->addChild(pImg);
+
 	int get = rand() % 10;
-	if(get > 3){
-		int height = rand() % 10 + 1;
-		int width = rand() % 16 + 1;
-		CCSprite *pImg = CCSprite::create("44961977_big_p0.png",
-				CCRectMake(192 * (height - 1), 256 * (width - 1), 192, 256));
+	if (get > 3) {
+		CCSprite *pImg = CCSprite::create("atari.png");
 //	    CCSprite *pImg = CCSprite::create("44961977_big_p0.png",CCRectMake(188*(height-1),256*(width-1),188*height,256*width));
 		pImg->setPosition(ccp(winSize.width * .5, winSize.height * .5));
 		this->addChild(pImg);
 
-		CCParticleSystemQuad* particle;
-		particle = CCParticleSystemQuad::create("particle_texture.plist");
-		if(isEmpty == false){
-			isEmpty = true;
-		particle->setPosition(winSize.width / 2, winSize.height / 2);
-		this->addChild(particle);
-		}
-	}else{
+	} else {
+		CCSprite *pImg = CCSprite::create("hazure.png");
+		//	    CCSprite *pImg = CCSprite::create("44961977_big_p0.png",CCRectMake(188*(height-1),256*(width-1),188*height,256*width));
+		pImg->setPosition(ccp(winSize.width * .5, winSize.height * .5));
+		this->addChild(pImg);
 
 	}
 
