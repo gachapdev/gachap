@@ -30,4 +30,6 @@ cocos2d/
 .launch
 .buildpath
 proj.ios_mac
-
+proj.linux
+proj.win32
+proj.wp8-xaml
